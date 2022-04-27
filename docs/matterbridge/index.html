@@ -1,0 +1,411 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Matterbridge - Coletivo #BolhaTech</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=bolha.io/favicon.png><link rel=stylesheet href=/bolha.io/css/style.min.6719d72e323121369d5caeb4264b95d8a63cf1deaab029da67602fe5a046e0a4.css></head><body class="page page-default-single"><div id=main-menu-mobile class=main-menu-mobile><ul><li class=menu-item-home><a href=bolha.io/><span>Home</span></a></li><li class=menu-item-docs><a href=bolha.io/docs/><span>Docs</span></a></li></ul></div><div class=wrapper><div class=header><div class=container><div class=logo><a href=bolha.io><img alt=Logo src=/bolha.io/images/logo.svg></a></div><div class=logo-mobile><a href=bolha.io><img alt=Logo src=/bolha.io/images/logo-mobile.svg></a></div><div id=main-menu class=main-menu><ul><li class=menu-item-home><a href=bolha.io/><span>Home</span></a></li><li class=menu-item-docs><a href=bolha.io/docs/><span>Docs</span></a></li></ul></div><button id=toggle-main-menu-mobile class="hamburger hamburger--slider" type=button>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button></div></div><div class="container pt-2 pt-md-6 pb-3 pb-md-6"><div class=row><div class="col-12 col-md-3 mb-3"><div class=sidebar><div class=docs-menu><h4>Docs</h4><ul><li><a href=bolha.io/docs/sobre/>A BolhaTech</a></li><li><a href=bolha.io/docs/canais/>Canais integrados</a></li><li><a href=bolha.io/docs/conduta/>Código de conduta</a></li><li><a href=bolha.io/docs/participe/>Como levo meu canal?</a></li><li class=active><a href=bolha.io/docs/matterbridge/>Matterbridge</a></li></ul></div></div></div><div class="col-12 col-md-9"><h1 class=title>Matterbridge</h1><div class=content><h3 id=docker-composeyaml>docker-compose.yaml</h3><p>Nosso dockerfile</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>version: &#39;3.7&#39;
+</span></span><span class=line><span class=cl>services:
+</span></span><span class=line><span class=cl>  matterbridge:
+</span></span><span class=line><span class=cl>    container_name: matterbridge_bolhatech
+</span></span><span class=line><span class=cl>    image: 42wim/matterbridge:1.25
+</span></span><span class=line><span class=cl>    restart: unless-stopped
+</span></span><span class=line><span class=cl>    volumes:
+</span></span><span class=line><span class=cl>    - ./matterbridge.toml:/etc/matterbridge/matterbridge.toml:ro
+</span></span></code></pre></div><h3 id=matterbridgetoml>matterbridge.toml</h3><p>Segue exemplo de configuração de nosso matterbridge.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[general]
+</span></span><span class=line><span class=cl>MediaDownloadSize=&#34;5000000&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl># discord section
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[discord]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[discord.bolha]
+</span></span><span class=line><span class=cl>Token=&#34;SEU_TOKEN&#34;
+</span></span><span class=line><span class=cl>Server=&#34;SEU_ID&#34;
+</span></span><span class=line><span class=cl>AllowMention=[&#34;everyone&#34;, &#34;roles&#34;, &#34;users&#34;, &#34;admins&#34;]
+</span></span><span class=line><span class=cl>ShowEmbeds=false
+</span></span><span class=line><span class=cl>UseUserName=false
+</span></span><span class=line><span class=cl>UseDiscriminator=false
+</span></span><span class=line><span class=cl>AutoWebhooks=false
+</span></span><span class=line><span class=cl>EditDisable=false
+</span></span><span class=line><span class=cl>IgnoreMessages=&#34;ɢᴜᴀʀᴀɴᴛᴇᴇᴅ ᴛʀᴀᴅɪɴɢ ʀɪᴄʜ ʙɪɴᴀʀʏ COIN coin currency CURRENCY forex FOREX stock STOCK trade TRADE trading TRADING invested INVESTED earn EARN mining MINING MONEY money&#34;
+</span></span><span class=line><span class=cl>ShowJoinPart=false
+</span></span><span class=line><span class=cl>StripNick=false
+</span></span><span class=line><span class=cl>ShowTopicChange=false
+</span></span><span class=line><span class=cl>SyncTopic=false
+</span></span><span class=line><span class=cl>MessageClipped=&#34;&lt;clipped message&gt;&#34;
+</span></span><span class=line><span class=cl>RemoteNickFormat=&#34;({NICK}@{PROTOCOL}) &#34;
+</span></span><span class=line><span class=cl>EditSuffix=&#34; (edited)&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl># matrix section
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl>[matrix]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[matrix.bolha]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Server=&#34;https://matrix.org&#34;
+</span></span><span class=line><span class=cl>Login=&#34;SEU_USER&#34;
+</span></span><span class=line><span class=cl>Password=&#34;SEU_PASSWORD&#34;
+</span></span><span class=line><span class=cl>NoHomeServerSuffix=true
+</span></span><span class=line><span class=cl>HTMLDisable=false
+</span></span><span class=line><span class=cl>UseUserName=false
+</span></span><span class=line><span class=cl>ShowJoinPart=false
+</span></span><span class=line><span class=cl>StripNick=false
+</span></span><span class=line><span class=cl>ShowTopicChange=false
+</span></span><span class=line><span class=cl>RemoteNickFormat=&#34;({NICK}@{PROTOCOL}) &#34;
+</span></span><span class=line><span class=cl>EditSuffix=&#34; (edited)&#34;
+</span></span><span class=line><span class=cl>IgnoreMessages=&#34;ɢᴜᴀʀᴀɴᴛᴇᴇᴅ ᴛʀᴀᴅɪɴɢ ʀɪᴄʜ ʙɪɴᴀʀʏ COIN coin currency CURRENCY forex FOREX stock STOCK trade TRADE trading TRADING invested INVESTED earn EARN mining MINING MONEY money&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl>#telegram section
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl>[telegram]
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>[telegram.bolha]
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>Token=&#34;SEU_TOKEN&#34;
+</span></span><span class=line><span class=cl>DisableWebPagePreview=false
+</span></span><span class=line><span class=cl>UseFirstName=false
+</span></span><span class=line><span class=cl>UseInsecureURL=false
+</span></span><span class=line><span class=cl>QuoteDisable=false
+</span></span><span class=line><span class=cl>QuoteLengthLimit=0
+</span></span><span class=line><span class=cl>QuoteFormat=&#34;{MESSAGE} (re @{QUOTENICK}: {QUOTEMESSAGE})&#34;
+</span></span><span class=line><span class=cl>MediaConvertWebPToPNG=false
+</span></span><span class=line><span class=cl>EditDisable=false
+</span></span><span class=line><span class=cl>ShowJoinPart=false
+</span></span><span class=line><span class=cl>StripNick=false
+</span></span><span class=line><span class=cl>ShowTopicChange=false
+</span></span><span class=line><span class=cl>IgnoreMessages=&#34;ɢᴜᴀʀᴀɴᴛᴇᴇᴅ ᴛʀᴀᴅɪɴɢ ʀɪᴄʜ ʙɪɴᴀʀʏ COIN coin currency CURRENCY forex FOREX stock STOCK trade TRADE trading TRADING invested INVESTED earn EARN mining MINING MONEY money&#34;
+</span></span><span class=line><span class=cl>RemoteNickFormat=&#34;({NICK}@{PROTOCOL}) &#34;
+</span></span><span class=line><span class=cl>EditSuffix=&#34; (edited)&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl># gateway section bolhatec
+</span></span><span class=line><span class=cl>###################################################################
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### matrix &lt;&gt; discord &lt;&gt; telegram
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;cloudnative-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#cloudnative-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;cloudnative-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001375583910&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;cicd-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#cicd-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;cicd-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001283833531&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;tecladomecanico&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#tecladomecanico:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;tecladomecanico&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001208515699 &#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;macusers-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#macusers-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;macusers-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001052488672&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;gitops-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#gitops-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;gitops-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001375992764&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;devops-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#devops-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;devops-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001423205502&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;gitlab-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#gitlab-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;gitlab-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001116126565&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;docker-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#docker-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;docker-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001020429061&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;terraform-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#terraform-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;terraform-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001141750151&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;packer-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#packer-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;packer-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001496751272&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;devopsdays-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#devopsdays-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;devopsdays-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001109056730&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;codigo-de-conduta&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#codigo-de-conduta:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;codigo-de-conduta&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001095406242&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;ansible-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#ansible-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;ansible-br&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001112694111&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;homeservers&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#servidores-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;homeservers&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001178428134&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;vagas&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#vagas-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;vagas&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;telegram.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;-1001682001563&#34;
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>### matrix &lt;&gt; discord
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;vagrant&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#bolhatech_vagrant:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;vagrant&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;rancher&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#rancher-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;rancher&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;kubernetes-br&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#kubernetes-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;kubernetes&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;nomad&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#nomad-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;nomad&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;boundary&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#boundary-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;boundary&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;vault&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#vault-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;vault&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;servicemesh&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#servicemesh-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;servicemesh&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;eventos&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#eventos-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;eventos&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[[gateway]]
+</span></span><span class=line><span class=cl>name=&#34;coberturas-aberto&#34;
+</span></span><span class=line><span class=cl>enable=true
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;matrix.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;#coberturas-br:matrix.org&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    [[gateway.inout]]
+</span></span><span class=line><span class=cl>    account=&#34;discord.bolha&#34;
+</span></span><span class=line><span class=cl>    channel=&#34;coberturas&#34;
+</span></span></code></pre></div></div></div></div></div></div></div><div class=sub-footer><div class=container><div class=row><div class=col-12><div class=sub-footer-inner><ul><li class=zerostatic><a href=https://www.zerostatic.io>www.zerostatic.io</a></li></ul></div></div></div></div></div><script type=text/javascript src=/bolha.io/js/scripts.min.55e8e1e2e7596c9a982bc04119cee1e2d4624c4c5a2dc0e9eb63ce401be14a24.js></script></body></html>
