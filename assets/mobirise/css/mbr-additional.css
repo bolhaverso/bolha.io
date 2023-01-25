@@ -1047,6 +1047,30 @@ a {
 .cid-tqMQHOknjj .mbr-section-btn {
   color: #ffffff;
 }
+.cid-ttNvVuj7rC {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  background-color: #4479d9;
+}
+.cid-ttNvVuj7rC .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-ttNvVuj7rC .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-ttNvVuj7rC .mbr-section-title {
+  color: #ffffff;
+}
+.cid-ttNvVuj7rC .mbr-text,
+.cid-ttNvVuj7rC .mbr-section-btn {
+  color: #fafafa;
+}
 .cid-tqMUunotcg {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1343,7 +1367,7 @@ a {
 .cid-ttIz8YLFJt .list {
   list-style: none;
   padding-left: 0;
-  color: #bbbbbb;
+  color: #ffffff;
 }
 @media (max-width: 991px) {
   .cid-ttIz8YLFJt .list {
@@ -2208,7 +2232,7 @@ a {
 .cid-ttIz8YLFJt .list {
   list-style: none;
   padding-left: 0;
-  color: #bbbbbb;
+  color: #ffffff;
 }
 @media (max-width: 991px) {
   .cid-ttIz8YLFJt .list {
@@ -2755,7 +2779,7 @@ a {
 .cid-ttIz8YLFJt .list {
   list-style: none;
   padding-left: 0;
-  color: #bbbbbb;
+  color: #ffffff;
 }
 @media (max-width: 991px) {
   .cid-ttIz8YLFJt .list {
@@ -3137,6 +3161,30 @@ a {
 .cid-ttHbW8XKlr .mbr-text,
 .cid-ttHbW8XKlr .mbr-section-btn {
   color: #ffffff;
+}
+.cid-ttNwp8DPsk {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  background-color: #4479d9;
+}
+.cid-ttNwp8DPsk .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-ttNwp8DPsk .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-ttNwp8DPsk .mbr-section-title {
+  color: #ffffff;
+}
+.cid-ttNwp8DPsk .mbr-text,
+.cid-ttNwp8DPsk .mbr-section-btn {
+  color: #fafafa;
 }
 .cid-ttHbW9hsp3 {
   padding-top: 6rem;
@@ -3531,7 +3579,7 @@ a {
 .cid-ttIz8YLFJt .list {
   list-style: none;
   padding-left: 0;
-  color: #bbbbbb;
+  color: #ffffff;
 }
 @media (max-width: 991px) {
   .cid-ttIz8YLFJt .list {
@@ -4028,7 +4076,7 @@ a {
 .cid-ttIz8YLFJt .list {
   list-style: none;
   padding-left: 0;
-  color: #bbbbbb;
+  color: #ffffff;
 }
 @media (max-width: 991px) {
   .cid-ttIz8YLFJt .list {
