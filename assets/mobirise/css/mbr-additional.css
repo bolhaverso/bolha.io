@@ -1026,7 +1026,7 @@ a {
   }
 }
 .cid-tqMQHOknjj {
-  background-image: url("../../../assets/images/jonas-leupe-wk-elt11pf0-unsplash.jpg");
+  background-image: url("../../../assets/images/mbr-1920x1282.jpg");
 }
 .cid-tqMQHOknjj .mbr-fallback-image.disabled {
   display: none;
@@ -1041,7 +1041,7 @@ a {
   top: 0;
 }
 .cid-tqMQHOknjj .mbr-section-title {
-  color: #ffffff;
+  color: #000000;
 }
 .cid-tqMQHOknjj .mbr-text,
 .cid-tqMQHOknjj .mbr-section-btn {
@@ -2687,6 +2687,53 @@ a {
   }
 }
 .cid-ttHbL7RDGR .image-wrapper img {
+  width: 100%;
+  object-fit: cover;
+}
+.cid-tEFc3gDKTW {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #232323;
+}
+.cid-tEFc3gDKTW .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-tEFc3gDKTW .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-tEFc3gDKTW .content-wrapper {
+  background: #fafafa;
+}
+@media (max-width: 991px) {
+  .cid-tEFc3gDKTW .content-wrapper .image-wrapper {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-tEFc3gDKTW .content-wrapper {
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .cid-tEFc3gDKTW .content-wrapper {
+    padding: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .cid-tEFc3gDKTW .content-wrapper {
+    padding: 5rem 3rem;
+  }
+  .cid-tEFc3gDKTW .content-wrapper .text-wrapper {
+    padding-left: 2rem;
+  }
+}
+.cid-tEFc3gDKTW .image-wrapper img {
   width: 100%;
   object-fit: cover;
 }
