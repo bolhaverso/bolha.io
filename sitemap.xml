@@ -3,12 +3,15 @@
 		<loc>https://bolha.io/index.html</loc>
 	</url>
 	<url>
-		<loc>https://bolha.io/time.html</loc>
-	</url>
-	<url>
 		<loc>https://bolha.io/sobre.html</loc>
 	</url>
 	<url>
 		<loc>https://bolha.io/english.html</loc>
+	</url>
+	<url>
+		<loc>https://bolha.io/about.html</loc>
+	</url>
+	<url>
+		<loc>https://bolha.io/team.html</loc>
 	</url>
 </urlset>
