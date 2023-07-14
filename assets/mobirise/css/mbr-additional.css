@@ -1189,7 +1189,7 @@ a {
 }
 .cid-tITC0r1ROj .item-subtitle {
   text-align: left;
-  color: #232323;
+  color: #bbbbbb;
 }
 .cid-tITC0r1ROj .mbr-section-subtitle {
   color: #fafafa;
@@ -1317,7 +1317,7 @@ a {
 }
 .cid-tGBh9r3Tls .item-subtitle {
   text-align: left;
-  color: #232323;
+  color: #bbbbbb;
 }
 .cid-tGBh9r3Tls .mbr-section-subtitle {
   color: #fafafa;
@@ -3311,27 +3311,27 @@ a {
 .cid-tIHC44EerD .mbr-section-subtitle {
   color: #fafafa;
 }
-.cid-tIHC44UL4R {
+.cid-tK11xqoGfa {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #232323;
+  background-color: #353535;
 }
-.cid-tIHC44UL4R img,
-.cid-tIHC44UL4R .item-img {
+.cid-tK11xqoGfa img,
+.cid-tK11xqoGfa .item-img {
   width: 100%;
   height: 100%;
   height: 500px;
   object-fit: cover;
 }
-.cid-tIHC44UL4R .item:focus,
-.cid-tIHC44UL4R span:focus {
+.cid-tK11xqoGfa .item:focus,
+.cid-tK11xqoGfa span:focus {
   outline: none;
 }
-.cid-tIHC44UL4R .item {
+.cid-tK11xqoGfa .item {
   cursor: pointer;
   margin-bottom: 2rem;
 }
-.cid-tIHC44UL4R .item-wrapper {
+.cid-tK11xqoGfa .item-wrapper {
   position: relative;
   border-radius: 4px;
   background: #ffffff;
@@ -3340,39 +3340,39 @@ a {
   flex-flow: column nowrap;
 }
 @media (min-width: 992px) {
-  .cid-tIHC44UL4R .item-wrapper .item-content {
+  .cid-tK11xqoGfa .item-wrapper .item-content {
     padding: 2rem 2rem 0;
   }
-  .cid-tIHC44UL4R .item-wrapper .item-footer {
+  .cid-tK11xqoGfa .item-wrapper .item-footer {
     padding: 0 2rem 2rem;
   }
 }
 @media (max-width: 991px) {
-  .cid-tIHC44UL4R .item-wrapper .item-content {
+  .cid-tK11xqoGfa .item-wrapper .item-content {
     padding: 1rem 1rem 0;
   }
-  .cid-tIHC44UL4R .item-wrapper .item-footer {
+  .cid-tK11xqoGfa .item-wrapper .item-footer {
     padding: 0 1rem 1rem;
   }
 }
-.cid-tIHC44UL4R .mbr-section-btn {
+.cid-tK11xqoGfa .mbr-section-btn {
   margin-top: auto !important;
 }
-.cid-tIHC44UL4R .mbr-section-title {
+.cid-tK11xqoGfa .mbr-section-title {
   color: #ffffff;
 }
-.cid-tIHC44UL4R .mbr-text,
-.cid-tIHC44UL4R .mbr-section-btn {
+.cid-tK11xqoGfa .mbr-text,
+.cid-tK11xqoGfa .mbr-section-btn {
   text-align: left;
 }
-.cid-tIHC44UL4R .item-title {
+.cid-tK11xqoGfa .item-title {
   text-align: left;
 }
-.cid-tIHC44UL4R .item-subtitle {
+.cid-tK11xqoGfa .item-subtitle {
   text-align: left;
   color: #bbbbbb;
 }
-.cid-tIHC44UL4R .mbr-section-subtitle {
+.cid-tK11xqoGfa .mbr-section-subtitle {
   color: #fafafa;
 }
 .cid-tIHC457mAY {
